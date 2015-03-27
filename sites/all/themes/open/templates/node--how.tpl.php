@@ -20,7 +20,6 @@
                 <header>
                     <h1><?php print $title; ?></h1>
                 </header>
-                <p>will be here</p>
             </div>
             </section>
 

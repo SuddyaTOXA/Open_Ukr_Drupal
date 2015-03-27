@@ -131,3 +131,35 @@ function open_preprocess_block(&$variables, $hook) {
 }
 // */
 
+function open_preprocess_page(&$vars, $hook) {
+// Primary nav.
+$vars['primary_nav'] = FALSE;
+if ($vars['main_menu']) {
+// Build links.
+  $vars['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+// Provide default theme wrapper function.
+  $vars['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+}
+}
+
+/**
+* Theme wrapper function for the primary menu links
+*/
+function open_menu_tree__primary(&$vars) {
+  return '<ul>' . $vars['tree'] . '</ul>';
+}
+
+function open_menu_tree($vars) {
+  return '<ul class="sub-menu">' . $vars['tree'] . '</ul>';
+}
+
+function open_menu_link(array $vars) {
+  $element = $vars['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li>' . $output . $sub_menu . "</li>\n";
+}

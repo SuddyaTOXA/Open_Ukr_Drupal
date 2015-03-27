@@ -9,7 +9,10 @@
                 <h2><?php print $title; ?></h2>
 
                 <?php print render($content['body']); ?>
-                <a href="<?php print $node_url; ?>" class="read-more">Read More</a>
+
+                <div class="read-more-box">
+                    <a href="<?php print $node_url; ?>" class="read-more">Read More</a>
+                </div>
             </div>
 <?php else: ?>
 
@@ -18,7 +21,6 @@
                 <header>
                     <h1><?php print $title; ?></h1>
                 </header>
-                <p>will be here</p>
             </div>
             </section>
 
