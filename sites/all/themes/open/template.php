@@ -179,17 +179,17 @@ function open_menu_tree__primary(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
 }
 
-function open_menu_tree($variables) {
-  return '<ul class="sub-menu">' . $variables['tree'] . '</ul>';
-}
-
-function open_menu_link(array $variables) {
-  $element = $variables['element'];
-  $sub_menu = '';
-
-  if ($element['#below']) {
-    $sub_menu = drupal_render($element['#below']);
-  }
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  return '<li>' . $output . $sub_menu . "</li>\n";
-}
+//function open_menu_tree($variables) {
+//  return '<ul class="sub-menu">' . $variables['tree'] . '</ul>';
+//}
+//
+//function open_menu_link(array $variables) {
+//  $element = $variables['element'];
+//  $sub_menu = '';
+//
+//  if ($element['#below']) {
+//    $sub_menu = drupal_render($element['#below']);
+//  }
+//  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+//  return '<li>' . $output . $sub_menu . "</li>\n";
+//}

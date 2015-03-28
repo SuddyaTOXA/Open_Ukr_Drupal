@@ -33,9 +33,9 @@
                     
                   <nav class="main-nav">
 
-                    <?php if (!empty($primary_nav)): ?>
-                    <?php print render($primary_nav); ?>
-                    <?php endif; ?>
+                    <?php if (!empty($primary_nav)):
+                        print render($primary_nav);
+                    endif; ?>
 
                   </nav> 
         <!--
@@ -141,14 +141,6 @@
 
         <main class="main-content">
             <section class="preheader-box wrap-box">
-                <header>
-                    <h2><?php print render($page['title']); ?></h2>
-                </header>
-
-                <p class="description">
-                    <?php print render($page['summary']); ?>
-                </p>
-
                 <?php print render($page['content']); ?>
             </section>
 
