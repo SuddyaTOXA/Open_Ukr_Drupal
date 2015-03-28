@@ -18,12 +18,15 @@
   <title><?php print $head_title; ?></title>
 
   <?php if ($default_mobile_metatags): ?>
-    <meta name="MobileOptimized" content="width">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="viewport" content="width=device-width">
+<!--    <meta name="MobileOptimized" content="width">-->
+<!--    <meta name="HandheldFriendly" content="true">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=1024, user-scalable=yes">
   <?php endif; ?>
   <meta http-equiv="cleartype" content="on">
 
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <?php if ($add_html5_shim and !$add_respond_js): ?>
@@ -39,8 +42,7 @@
     <script src="<?php print $base_path . $path_to_zen; ?>/js/respond.js"></script>
     <![endif]-->
   <?php endif; ?>
-   <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
+
 
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
@@ -48,10 +50,5 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
-    <script src="../js/mapJS.js"></script>
-  
 </body>
 </html>

@@ -117,7 +117,7 @@
                             <h2>Beautiful Title</h2>
                             <p>Beautiful Description with many nice words.</p>
                         </div>
-                        <img src="images/1.jpg" alt="1">
+                        <img src="<?php print drupal_get_path('theme','open'); ?>/images/1.jpg" alt="1">
                     </li>
 
                     <li>
@@ -125,7 +125,7 @@
                             <h2>Wonderful Title</h2>
                             <p>Wonderful Description with many nice words. Wonderful Description with many nice words.</p>
                         </div>
-                        <img src="images/2.jpg" alt="2">
+                        <img src="<?php print drupal_get_path('theme','open'); ?>/images/2.jpg" alt="2">
                     </li>
 
                     <li>
@@ -133,70 +133,61 @@
                             <h2>Amazing Title</h2>
                             <p>Amazing Description with many nice words.</p>
                         </div>
-                        <img src="images/3.jpg" alt="3">
+                        <img src="<?php print drupal_get_path('theme','open'); ?>/images/3.jpg" alt="3">
                     </li>
                 </ul>
             </div><!--end SLIDER-HEADER-->
         </header>
 
         <main class="main-content">
-            
-          <?php print render($page['content']); ?>
+            <section class="preheader-box wrap-box">
+                <header>
+                    <h2><?php print render($page['title']); ?></h2>
+                </header>
 
+                <p class="description">
+                    <?php print render($page['summary']); ?>
+                </p>
+
+                <?php print render($page['content']); ?>
+            </section>
+
+            <section class="video-box">
+                <ul class="video-list wrap-box">
+                    <li>
+                        <article>
+                            <header>
+                                <h3>Title of video</h3>
+                            </header>
+
+                            <div class="video-container">
+                                <div class="start-video" data-videoid="438sGy9IE58">
+                                    <img src="http://img.youtube.com/vi/438sGy9IE58/0.jpg" alt="video">
+                                </div>
+                            </div>
+
+                            <p>Dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article>
+                            <header>
+                                <h3>Another title of video</h3>
+                            </header>
+
+                            <div class="video-container">
+                                <div class="start-video" data-videoid="0E4tRVQy9Rw">
+                                    <img src="http://img.youtube.com/vi/0E4tRVQy9Rw/0.jpg" alt="video">
+                                </div>
+                            </div>
+
+                            <p>Dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
         </main>
 </div><!--end WRAPPER-->
 
   <?php print render($page['footer']); ?>
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!--[if lt IE 10]><script src="js/jquery.placeholder.js"></script><![endif]-->
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
-    <script>
-        function initialize() {
-            var mapCanvas = document.getElementById('map_canvas');
-            var mapOptions = {
-                center: new google.maps.LatLng(48.4705052,31.2268153),
-                zoom: 6,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                disableDefaultUI: true
-            }
-
-            // Get the HTML DOM element that will contain your map
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
-
-            // Create the Google Map using out element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            setMarkers(map, places);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-        function setMarkers(map, locations) {
-            // Display area markers
-            var latlngbounds = new google.maps.LatLngBounds();
-
-            var image = new google.maps.MarkerImage( '',
-                    new google.maps.Size(46,66), // icon sizes
-                    new google.maps.Point(0,0),
-                    new google.maps.Point(7,36)
-            );
-
-            for (var i = 0; i < places.length; i++) {
-                var myLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
-                // Add coordinates of the marker in the area
-                latlngbounds.extend(myLatLng);
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    icon: image,
-                    title: locations[i][0]
-                });
-            }
-        }
-        var places = [
-            ['Ukraine',48.4705052,31.2268153]
-        ];
-    </script>

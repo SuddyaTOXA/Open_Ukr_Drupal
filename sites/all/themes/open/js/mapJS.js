@@ -24,7 +24,7 @@
         // Display area markers
         var latlngbounds = new google.maps.LatLngBounds();
 
-        var image = new google.maps.MarkerImage( 'images/pointer.png',
+        var image = new google.maps.MarkerImage( '../images/pointer.png',
             new google.maps.Size(76,77), // icon sizes
             new google.maps.Point(0,0),
             new google.maps.Point(7,36)

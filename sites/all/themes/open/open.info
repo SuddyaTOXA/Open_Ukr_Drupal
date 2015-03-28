@@ -52,9 +52,6 @@ stylesheets[all][] = system.theme.css
 ; Then we add our own stylesheet.
 stylesheets[all][] = fonts/font-awesome/css/font-awesome.min.css
 stylesheets[all][] = css/style.css
-stylesheets[all][] = css/responsiveslides.css
-stylesheets[all][] = css/slick.css
-stylesheets[all][] = css/slick-theme.css
 
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
@@ -73,12 +70,6 @@ stylesheets[all][] = css/slick-theme.css
 
 ;scripts[] = js/script.js
 
-scripts[] = js/jQuery 1.11.0.js
-scripts[] = js/jquery.placeholder.js
-scripts[] = js/uisearch.js
-scripts[] = js/responsiveslides.min.js
-scripts[] = js/slick.min.js
-scripts[] = js/yt.preview.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and

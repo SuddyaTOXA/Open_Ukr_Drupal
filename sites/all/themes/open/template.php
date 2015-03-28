@@ -131,30 +131,60 @@ function open_preprocess_block(&$variables, $hook) {
 }
 // */
 
-function open_preprocess_page(&$vars, $hook) {
-// Primary nav.
-$vars['primary_nav'] = FALSE;
-if ($vars['main_menu']) {
-// Build links.
-  $vars['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-// Provide default theme wrapper function.
-  $vars['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
-}
+function open_preprocess_page(&$variables, $hook) {
+  drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+      array('type' => 'external', 'scope' => 'footer', 'weight' => 1));
+  drupal_add_js(drupal_get_path('theme','open') . '/js/jquery.placeholder.js',
+      array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
+  drupal_add_js(drupal_get_path('theme','open') . '/js/uisearch.js',
+      array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
+
+  if (drupal_is_front_page()) {
+    drupal_add_css(drupal_get_path('theme','open') . '/css/responsiveslides.css');
+
+    drupal_add_js(drupal_get_path('theme','open') . '/js/responsiveslides.min.js',
+        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+    drupal_add_js(drupal_get_path('theme','open') . '/js/yt.preview.js',
+        array('type' => 'file', 'scope' => 'footer', 'weight' => 4));
+  }
+
+  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'ministry') {
+    drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
+    drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
+
+    drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
+        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+  }
+
+  drupal_add_js('https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',
+      array('type' => 'external', 'scope' => 'footer', 'weight' => 5));
+  drupal_add_js(drupal_get_path('theme','open') . '/js/mapJS.js',
+      array('type' => 'file', 'scope' => 'footer', 'weight' => 6));
+
+  
+  // Primary nav.
+  $variables['primary_nav'] = FALSE;
+  if ($variables['main_menu']) {
+  // Build links.
+    $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+  // Provide default theme wrapper function.
+    $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+  }
 }
 
 /**
 * Theme wrapper function for the primary menu links
 */
-function open_menu_tree__primary(&$vars) {
-  return '<ul>' . $vars['tree'] . '</ul>';
+function open_menu_tree__primary(&$variables) {
+  return '<ul>' . $variables['tree'] . '</ul>';
 }
 
-function open_menu_tree($vars) {
-  return '<ul class="sub-menu">' . $vars['tree'] . '</ul>';
+function open_menu_tree($variables) {
+  return '<ul class="sub-menu">' . $variables['tree'] . '</ul>';
 }
 
-function open_menu_link(array $vars) {
-  $element = $vars['element'];
+function open_menu_link(array $variables) {
+  $element = $variables['element'];
   $sub_menu = '';
 
   if ($element['#below']) {
