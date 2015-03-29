@@ -38,78 +38,10 @@
                     endif; ?>
 
                   </nav> 
-        <!--
-                    <nav class="main-nav">
-                        <ul>
-                            <li class="active">
-                                <a href="index.html">Home</a>
 
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="culture.html">Culture</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="religion.html">Religion</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="news.html">News</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="where.html">Where</a>
-
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="where.html">Location 1</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="where.html">Location 2</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="where.html">Location 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="how.html">How</a>
-
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="how.html">Ministry 1</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="how.html">Ministry 2</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="how.html">Ministry 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="join.html">Join</a>
-
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="contact-us.html">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
--->
                 </div>
             </div><!--end TOP-HEADER-->
-            
+
             <div class="slider-header">
                 <ul class="rslides">
                     <li>
@@ -137,6 +69,7 @@
                     </li>
                 </ul>
             </div><!--end SLIDER-HEADER-->
+
         </header>
 
         <main class="main-content">

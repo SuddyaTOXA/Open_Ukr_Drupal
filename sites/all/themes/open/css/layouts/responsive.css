@@ -515,7 +515,7 @@ main {
     clear: both;
     background: #ffffff;
 }
-.where-list li.even {
+.where-list li.views-row-even {
     background: #225C7B;
     color: #ffffff;
 }
@@ -525,7 +525,7 @@ main {
     width: 100%;
     max-height: 450px;
 }
-.where-list .even .where-img {
+.where-list .views-row-even .where-img {
     float: right;
 }
 .where-img img {
@@ -544,7 +544,7 @@ main {
     width: 100%;
     margin: 0 0 8px 40px;
 }
-.where-list .even .where-text h2 {
+.where-list .views-row-even .where-text h2 {
     float: right;
     margin: 0 40px 8px 0;
 }
@@ -552,7 +552,7 @@ main {
     text-decoration: none;
     font: 400 24px 'Montserrat', 'Open Sans', sans-serif;
 }
-.where-list .even .where-text h2 a {
+.where-list .views-row-even .where-text h2 a {
     color: #ffffff;
 }
 
@@ -562,7 +562,7 @@ main {
     margin: 0 0 17px 40px;
     line-height: 19px;
 }
-.where-list .even p {
+.where-list .views-row-even p {
     float: right;
     margin: 0 40px 17px 0;
 }
@@ -571,7 +571,7 @@ main {
     width: 100%;
     margin: 0 0 0 40px;
 }
-.where-list .even .read-more-box {
+.where-list .views-row-even .read-more-box {
     float: right;
     margin: 0 40px 0 0;
 }
@@ -579,7 +579,7 @@ a.read-more {
     font-weight: 700;
     text-decoration: underline;
 }
-.where-list .even a.read-more {
+.where-list .views-row-even a.read-more {
     color: #ffffff;
 }
 a.read-more:hover {
@@ -591,7 +591,7 @@ a.read-more:hover {
     clear: both;
     padding: 45px 0 70px;
 }
-.block-list li.even {
+.block-list li.views-row-even {
     background: #225C7B;
     color: #ffffff;
 }
