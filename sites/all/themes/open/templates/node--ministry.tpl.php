@@ -1,5 +1,4 @@
 <?php if ($teaser): ?>
-
             <div class="wrap-box">
                 <a href="<?php print $node_url; ?>">
                     <h2><?php print $title; ?></h2>

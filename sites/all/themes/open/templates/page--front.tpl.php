@@ -42,33 +42,10 @@
                 </div>
             </div><!--end TOP-HEADER-->
 
-            <div class="slider-header">
-                <ul class="rslides">
-                    <li>
-                        <div class="slide-description">
-                            <h2>Beautiful Title</h2>
-                            <p>Beautiful Description with many nice words.</p>
-                        </div>
-                        <img src="<?php print drupal_get_path('theme','open'); ?>/images/1.jpg" alt="1">
-                    </li>
-
-                    <li>
-                        <div class="slide-description">
-                            <h2>Wonderful Title</h2>
-                            <p>Wonderful Description with many nice words. Wonderful Description with many nice words.</p>
-                        </div>
-                        <img src="<?php print drupal_get_path('theme','open'); ?>/images/2.jpg" alt="2">
-                    </li>
-
-                    <li>
-                        <div class="slide-description">
-                            <h2>Amazing Title</h2>
-                            <p>Amazing Description with many nice words.</p>
-                        </div>
-                        <img src="<?php print drupal_get_path('theme','open'); ?>/images/3.jpg" alt="3">
-                    </li>
-                </ul>
-            </div><!--end SLIDER-HEADER-->
+            <?php
+                $block = module_invoke('views', 'block_view', 'header_slider-block');
+                print render($block['content']);
+            ?>
 
         </header>
 

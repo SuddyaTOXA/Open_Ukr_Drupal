@@ -89,6 +89,7 @@ stylesheets[all][] = css/style.css
 
 regions[header]         = Header
 regions[header_search]  = Header search
+regions[header_slider]  = Header slider
 regions[highlighted]    = Highlighted
 regions[content]        = Content
 regions[footer]         = Footer
