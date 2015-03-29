@@ -148,7 +148,7 @@ function open_preprocess_page(&$variables, $hook) {
         array('type' => 'file', 'scope' => 'footer', 'weight' => 4));
   }
 
-  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'ministry') {
+  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'how') {
     drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
     drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
 

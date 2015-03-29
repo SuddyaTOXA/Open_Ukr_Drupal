@@ -15,6 +15,7 @@
   left: 0;
   top: 0;
   max-height: 528px;
+  height: 100%;
   }
 
 .rslides li:first-child {
