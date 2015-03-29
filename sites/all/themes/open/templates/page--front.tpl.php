@@ -58,13 +58,10 @@
                     <h2><?php print $title; ?></h2>
                 </header>
 
-                <p class="description">
-                    <?php
-                        $body = field_get_items('node', $node, 'body');
-                        $summary = $body[0]['summary'];
-                        print $summary;
-                    ?>
-                </p>
+                <?php $descrip = $node->field_description['und']['0']['value'];
+                if ($descrip !== FALSE): ?>
+                    <p class="description"><?php print strip_tags($node->field_description['und']['0']['value']); ?></p>
+                <?php endif; ?>
 
                 <?php print render($page['content']['system_main']['nodes'][$nid]['body']); ?>
             </section>
@@ -73,42 +70,6 @@
                 $block = module_invoke('views', 'block_view', 'video_on_homepage-block');
                 print render($block['content']);
             ?>
-
-<!--            <section class="video-box">-->
-<!--                <ul class="video-list wrap-box">-->
-<!--                    <li>-->
-<!--                        <article>-->
-<!--                            <header>-->
-<!--                                <h3>Title of video</h3>-->
-<!--                            </header>-->
-<!---->
-<!--                            <div class="video-container">-->
-<!--                                <div class="start-video" data-videoid="438sGy9IE58">-->
-<!--                                    <img src="http://img.youtube.com/vi/438sGy9IE58/0.jpg" alt="video">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!---->
-<!--                            <p>Dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>-->
-<!--                        </article>-->
-<!--                    </li>-->
-<!---->
-<!--                    <li>-->
-<!--                        <article>-->
-<!--                            <header>-->
-<!--                                <h3>Another title of video</h3>-->
-<!--                            </header>-->
-<!---->
-<!--                            <div class="video-container">-->
-<!--                                <div class="start-video" data-videoid="0E4tRVQy9Rw">-->
-<!--                                    <img src="http://img.youtube.com/vi/0E4tRVQy9Rw/0.jpg" alt="video">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!---->
-<!--                            <p>Dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>-->
-<!--                        </article>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </section>-->
         </main>
 </div><!--end WRAPPER-->
 

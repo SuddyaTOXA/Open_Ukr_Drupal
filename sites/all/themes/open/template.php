@@ -161,14 +161,24 @@ function open_preprocess_page(&$variables, $hook) {
   drupal_add_js(drupal_get_path('theme','open') . '/js/mapJS.js',
       array('type' => 'file', 'scope' => 'footer', 'weight' => 6));
 
-  
-  // Primary nav.
-  $variables['primary_nav'] = FALSE;
-  if ($variables['main_menu']) {
-  // Build links.
-    $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-  // Provide default theme wrapper function.
-    $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+
+    // Primary nav.
+    $variables['primary_nav'] = FALSE;
+    if ($variables['main_menu']) {
+        // Build links.
+        $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+        // Provide default theme wrapper function.
+        $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+    }
+
+  // Custom error-pages
+  $status = drupal_get_http_header("status");
+  if($status == "404 Not Found") {
+      $variables['theme_hook_suggestions'][] = 'page__404';
+  }
+
+  if($status == "403 Forbidden") {
+      $variables['theme_hook_suggestions'][] = 'page__403';
   }
 }
 

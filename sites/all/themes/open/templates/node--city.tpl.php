@@ -6,23 +6,17 @@
             </a>
 
             <div class="where-text">
-                <h2><?php print $title; ?></h2>
+                <h2>
+                    <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+                </h2>
 
-                <?php print render($content['body']); ?>
+                <p><?php print strip_tags(render($content['body'])); ?></p>
 
                 <div class="read-more-box">
                     <a href="<?php print $node_url; ?>" class="read-more">Read More</a>
                 </div>
             </div>
 <?php else: ?>
-
-            <section class="wrap-page-title">
-            <div class="wrap-box">
-                <header>
-                    <h1><?php print $title; ?></h1>
-                </header>
-            </div>
-            </section>
 
             <div class="single-content">
                 <?php print render($content['body']); ?>       
@@ -31,4 +25,4 @@
                 <span>Matt Garaska</span>
             </div>
 
-<?php endif ?>    
+<?php endif; ?>

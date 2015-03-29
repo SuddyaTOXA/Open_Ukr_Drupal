@@ -43,12 +43,42 @@
             </div>
         </header>
 
+
+        <section class="wrap-page-title">
+            <div class="wrap-box">
+                <?php if (arg(0) == 'node' && arg(1) == '30') { ?>
+                    <header>
+                        <h1>There’s nothing here</h1>
+                    </header>
+
+                    <p>We so sorry</p>
+                <?php }
+
+                elseif (arg(0) == 'node' && arg(1) == '31') { ?>
+                    <header>
+                        <h1>Error 403</h1>
+                    </header>
+
+                    <p>Access Denied/Forbidden</p>
+                <?php } else { ?>
+
+                    <header>
+                        <h1><?php print $title; ?></h1>
+                    </header>
+
+                    <?php $descrip = $node->field_description['und']['0']['value'];
+                    if ($descrip !== FALSE): ?>
+                        <p><?php print strip_tags($node->field_description['und']['0']['value']); ?></p>
+                    <?php endif; ?>
+
+                <?php } ?>
+            </div>
+        </section>
+
         <main class="main-content">
-
-            <?php print render($page['content']); ?>     
-
+            <?php print render($page['content']); ?>
         </main>
-</div><!--end WRAPPER-->
+    </div><!--end WRAPPER-->
 
   <?php print render($page['footer']); ?>
 
