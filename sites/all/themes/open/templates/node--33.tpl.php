@@ -27,55 +27,62 @@
 </section>
 
 <div class="reviews-box">
-    <div class="wrap-box">
-        <ul class="list-reviews list-three-columns">
-            <li>
-                <div class="review-text">
-                    <h3>Title of text</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                </div>
 
-                <div class="review-author">
-                    <span class="author-photo">
-                        <img src="<?php echo path_to_theme(); ?>/images/photo.png" alt="Marta Stuart">
-                    </span>
-                    <span class="author-name">Marta Stuart,</span>
-                    <span class="about-author">SEO Charity Music</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="review-text">
-                    <h3>Title of text</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                </div>
-
-                <div class="review-author">
-                    <span class="author-photo">
-                        <img src="<?php echo path_to_theme(); ?>/images/photo.png" alt="Marta Stuart">
-                    </span>
-                    <span class="author-name">Marta Stuart,</span>
-                    <span class="about-author">SEO Charity Music</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="review-text">
-                    <h3>Title of text</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                </div>
-
-                <div class="review-author">
-                    <span class="author-photo">
-                        <img src="<?php echo path_to_theme(); ?>/images/photo.png" alt="Marta Stuart">
-                    </span>
-                    <span class="author-name">Marta Stuart,</span>
-                    <span class="about-author">SEO Charity Music</span>
-                </div>
-            </li>
-        </ul><!--end LIST-REVIEWS-->
-    </div>
+    <?php
+        $block = module_invoke('views', 'block_view', 'reviews-block');
+        print render($block['content']);
+    ?>
+<!---->
+<!--    <div class="wrap-box">-->
+<!--        <ul class="list-reviews list-three-columns">-->
+<!--            <li>-->
+<!--                <div class="review-text">-->
+<!--                    <h3>Title of text</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod-->
+<!--                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="review-author">-->
+<!--                    <span class="author-photo">-->
+<!--                        <img src="--><?php //echo path_to_theme(); ?><!--/images/photo.png" alt="Marta Stuart">-->
+<!--                    </span>-->
+<!--                    <span class="author-name">Marta Stuart,</span>-->
+<!--                    <span class="about-author">SEO Charity Music</span>-->
+<!--                </div>-->
+<!--            </li>-->
+<!---->
+<!--            <li>-->
+<!--                <div class="review-text">-->
+<!--                    <h3>Title of text</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod-->
+<!--                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="review-author">-->
+<!--                    <span class="author-photo">-->
+<!--                        <img src="--><?php //echo path_to_theme(); ?><!--/images/photo.png" alt="Marta Stuart">-->
+<!--                    </span>-->
+<!--                    <span class="author-name">Marta Stuart,</span>-->
+<!--                    <span class="about-author">SEO Charity Music</span>-->
+<!--                </div>-->
+<!--            </li>-->
+<!---->
+<!--            <li>-->
+<!--                <div class="review-text">-->
+<!--                    <h3>Title of text</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod-->
+<!--                        tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="review-author">-->
+<!--                    <span class="author-photo">-->
+<!--                        <img src="--><?php //echo path_to_theme(); ?><!--/images/photo.png" alt="Marta Stuart">-->
+<!--                    </span>-->
+<!--                    <span class="author-name">Marta Stuart,</span>-->
+<!--                    <span class="about-author">SEO Charity Music</span>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--        </ul><!--end LIST-REVIEWS-->-->
+<!--    </div>-->
+<!--    -->
 </div><!--end REVIEWS-BOX-->

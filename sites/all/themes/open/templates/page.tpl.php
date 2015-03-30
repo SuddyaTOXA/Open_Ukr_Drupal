@@ -24,11 +24,11 @@
                     </h1>
 
                     <div id="search-box">
-                        <form class="search-form" action="#" method="get">
-                            <input type="search" class="search-input" name="s" placeholder="Search">
-                            <input type="submit" class="search-submit" value="">
-                            <i class="fa fa-search"></i>
-                        </form>
+<!--                        <form class="search-form" action="#" method="get">-->
+<!--                            <input type="search" class="search-input" name="s" placeholder="Search">-->
+<!--                            <input type="submit" class="search-submit" value="">-->
+<!--                            <i class="fa fa-search"></i>-->
+<!--                        </form>-->
                     </div>
 
                   <nav class="main-nav">
