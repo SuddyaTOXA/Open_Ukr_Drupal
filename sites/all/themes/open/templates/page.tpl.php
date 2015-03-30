@@ -24,6 +24,10 @@
                     </h1>
 
                     <div id="search-box">
+                        <?php
+                            $block = module_invoke('search', 'block_view', 'form');
+                            print render($block['content']);
+                        ?>
 <!--                        <form class="search-form" action="#" method="get">-->
 <!--                            <input type="search" class="search-input" name="s" placeholder="Search">-->
 <!--                            <input type="submit" class="search-submit" value="">-->
@@ -69,6 +73,11 @@
                     <?php $descrip = $node->field_description['und']['0']['value'];
                     if ($descrip !== FALSE): ?>
                         <p><?php print strip_tags($node->field_description['und']['0']['value']); ?></p>
+                    <?php endif; ?>
+
+                    <?php $art_descrip = $node->field_article_description['und']['0']['value'];
+                    if ($art_descrip !== FALSE): ?>
+                        <p><?php print strip_tags($node->field_article_description['und']['0']['value']); ?></p>
                     <?php endif; ?>
 
                 <?php } ?>
