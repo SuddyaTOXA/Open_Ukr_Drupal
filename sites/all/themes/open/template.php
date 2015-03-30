@@ -155,12 +155,12 @@ function open_preprocess_page(&$variables, $hook) {
     drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
         array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
   }
-
-  drupal_add_js('https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',
-      array('type' => 'external', 'scope' => 'footer', 'weight' => 5));
-  drupal_add_js(drupal_get_path('theme','open') . '/js/mapJS.js',
-      array('type' => 'file', 'scope' => 'footer', 'weight' => 6));
-
+//
+//  drupal_add_js('https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',
+//      array('type' => 'external', 'scope' => 'footer', 'weight' => 5));
+//  drupal_add_js(drupal_get_path('theme','open') . '/js/mapJS.js',
+//      array('type' => 'file', 'scope' => 'footer', 'weight' => 6));
+//
 
     // Primary nav.
     $variables['primary_nav'] = FALSE;

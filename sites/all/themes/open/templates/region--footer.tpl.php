@@ -11,7 +11,10 @@
     <div class="wrap-footer">
         <footer class="footer">
             <div id="map">
-
+                <?php
+                $block = module_invoke('block', 'block_view', '1');
+                print render($block['content']);
+                ?>
             </div>
 
             <div class="wrap-form">
@@ -21,24 +24,10 @@
                             suscipit lobortis nisl ut aliquip iusto odio dignissim qui blandit praesent lupt.</p>
 
                         <ul class="list-social">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                    Facebook
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                    Twitter
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-youtube-play"></i>
-                                    YouTube
-                                </a>
-                            </li>
+                            <?php
+                                $block = module_invoke('widgets', 'block_view', 's_socialmedia_profile-default');
+                                print render($block['content']);
+                            ?>
                         </ul>
                     </div>
 
