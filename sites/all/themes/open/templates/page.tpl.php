@@ -47,7 +47,7 @@
             </div>
         </header>
 
-
+    <?php if(!arg(0) == 'search'): ?>
         <section class="wrap-page-title">
             <div class="wrap-box">
                 <?php if (arg(0) == 'node' && arg(1) == '30') { ?>
@@ -64,6 +64,7 @@
                     </header>
 
                     <p>Access Denied/Forbidden</p>
+
                 <?php } else { ?>
 
                     <header>
@@ -85,6 +86,7 @@
         </section>
 
         <main class="main-content">
+    <?php endif; ?>
             <?php print render($page['content']); ?>
         </main>
     </div><!--end WRAPPER-->

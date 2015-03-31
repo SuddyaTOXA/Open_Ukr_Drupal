@@ -17,7 +17,7 @@
                 <?php print render($content['body']); ?>       
             </div>
             <div class="single-author">
-                <span>Matt Garaska</span>
+                <span><?php print strip_tags(render($name)); ?></span>
             </div>
 
 <?php endif; ?>

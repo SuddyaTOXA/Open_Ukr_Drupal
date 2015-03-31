@@ -887,23 +887,28 @@ span.about-author {
 .result-content p {
     line-height: 19px;
 }
-.pagination {
+.pagination,
+.wrap-results .item-list {
     text-align: center;
     padding: 0 0 33px;
 }
-.list-pagination {
+.list-pagination,
+.pager {
     position: relative;
     display: inline-block;
-    padding: 0 80px;
+    padding: 0 60px !important;
     border: 2px solid #215479;
     text-align: center;
     font: 400 18px 'Montserrat', 'Open Sans', sans-serif;
     color: #21527D;
 }
-.list-pagination li {
+.list-pagination li,
+.pager li {
     display: inline-block;
+    padding: 0 !important;
 }
-.list-pagination a {
+.list-pagination a,
+.pager a {
     display: block;
     padding: 5px 2px;
     text-decoration: none;
@@ -915,21 +920,24 @@ span.about-author {
     -o-transition: 0.2s;
     transition: 0.2s;
 }
-.list-pagination a:hover {
+.list-pagination a:hover,
+.pager a:hover {
     color: #FEB800;
     text-decoration: none;
 }
-.list-pagination .current {
+.list-pagination .pager-current,
+.pager .pager-current {
     color: #444444;
 }
-.pagination .current,
-.pagination .dots {
+.pagination .pager-current,
+.pagination .pager-dots,
+.pager .pager-current,
+.pager .pager-dots,{
     display: inline-table;
     padding: 5px 2px;
 }
-.prev,
-.next {
-    display: block;
+.pager-previous,
+.pager-next {
     position: absolute;
     top: -2px;
     height: 32px;
@@ -938,19 +946,38 @@ span.about-author {
     text-align: center;
     line-height: 32px;
 }
-.prev {left: -2px;}
-.next {right: -2px;}
-.prev a,
-.next a {
-    font-size: 30px;
-    line-height: 32px;
+.pager-previous {left: -2px;}
+.pager-next {right: -2px;}
+.pager-previous a,
+.pager-next a {
+    display: block;
+    height: 32px;
     padding: 0;
+
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 0;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
 }
-.prev a {padding-right: 3px;}
-.next a {padding-left: 3px;}
-.prev a:hover,
-.next a:hover {
+    .pager-previous a:before {
+        content: "\f104";
+        font-size: 30px;
+    }
+    .pager-next a:before {
+        content: "\f105";
+        font-size: 30px;
+    }
+.pager-previous a {padding-right: 3px;}
+.pager-next a {padding-left: 3px;}
+.pager-previous a:hover,
+.pager-next a:hover {
     background: #215479;
+}
+.pager .pager-first,
+.pager .pager-last {
+    display: none;
 }
 
 .wrap-no-results {
@@ -1120,7 +1147,16 @@ span.about-author {
     color: #F6E534;
 }
 
+/*----------------------------------------------------------------------------------*/
+/*-------------------------------------OTHER----------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+.page-search #search-form {
+    display: none;
+}
 
+/*----------------------------------------------------------------------------------*/
+/*-----------------------------------RESPONSIVE-------------------------------------*/
+/*----------------------------------------------------------------------------------*/
 /* Navigation bar */
 @media all and (min-width: 480px) {
   #main {
@@ -1137,9 +1173,7 @@ span.about-author {
   }
 }
 
-/*----------------------------------------------------------------------------------*/
-/*-----------------------------------RESPONSIVE-------------------------------------*/
-/*----------------------------------------------------------------------------------*/
+
 /**
  * Use 3 grid columns for smaller screens.
  */

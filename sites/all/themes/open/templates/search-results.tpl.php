@@ -24,20 +24,42 @@
  */
 ?>
 <?php if ($search_results): ?>
-<div class="wrap-results wrap-box">
-  <p class="search-info"><?php print $search_totals; ?> for &ldquo;<?php print get_current_search_terms(); ?>&rdquo;</p>
+  <section class="wrap-page-title">
+    <div class="wrap-box">
+        <header>
+          <h1>Results</h1>
+        </header>
 
-    <p><?php print (render($results['search_total'])); ?></p>
+        <p>of &ldquo;<?php print get_current_search_terms(); ?>&rdquo; search</p>
+    </div>
+  </section>
 
-  <ul class="list-results <?php print $module; ?>-results">
-    <?php print $search_results; ?>
-  </ul>
-  <?php print $pager; ?>
-    <?php print theme('custom__pager'); ?>
-</div>
+  <main class="main-content">
+    <div class="wrap-results wrap-box">
+      <p class="search-info"><?php print $search_totals; ?> for &ldquo;<?php print get_current_search_terms(); ?>&rdquo;</p>
+
+        <p><?php print (render($results['search_total'])); ?></p>
+
+      <ul class="list-results <?php print $module; ?>-results">
+        <?php print $search_results; ?>
+      </ul>
+      <?php print $pager; ?>
+        <?php print theme('custom__pager'); ?>
+    </div>
 <?php else : ?>
-  <div class="wrap-no-results wrap-box">
-    <p class="no-results-info">Sadly, nothing</p>
-    <img src="/<?php print drupal_get_path('theme','open'); ?>/images/search_error.jpg" class="no-results-img" alt="search_error">
-  </div><!--end WRAP-NO-RESULTS-->
+  <section class="wrap-page-title">
+    <div class="wrap-box">
+      <header>
+        <h1>No results were found.</h1>
+      </header>
+
+      <p>Please try a different search.</p>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="wrap-no-results wrap-box">
+      <p class="no-results-info">Sadly, nothing</p>
+      <img src="/<?php print drupal_get_path('theme','open'); ?>/images/search_error.jpg" class="no-results-img" alt="search_error">
+    </div><!--end WRAP-NO-RESULTS-->
 <?php endif; ?>
