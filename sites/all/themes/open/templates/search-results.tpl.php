@@ -25,18 +25,19 @@
 ?>
 <?php if ($search_results): ?>
 <div class="wrap-results wrap-box">
-  <p class="search-info">About <b>633 results</b> found for &ldquo;ministry&rdquo;</p>
+  <p class="search-info"><?php print $search_totals; ?> for &ldquo;<?php print get_current_search_terms(); ?>&rdquo;</p>
+
+    <p><?php print (render($results['search_total'])); ?></p>
 
   <ul class="list-results <?php print $module; ?>-results">
     <?php print $search_results; ?>
   </ul>
   <?php print $pager; ?>
+    <?php print theme('custom__pager'); ?>
 </div>
 <?php else : ?>
   <div class="wrap-no-results wrap-box">
     <p class="no-results-info">Sadly, nothing</p>
-    <img src="<?php print drupal_get_path('theme','open'); ?>/images/search_error.jpg" class="no-results-img" alt="search_error">
+    <img src="/<?php print drupal_get_path('theme','open'); ?>/images/search_error.jpg" class="no-results-img" alt="search_error">
   </div><!--end WRAP-NO-RESULTS-->
-
-  <?php print search_help('search#noresults', drupal_help_arg()); ?>
 <?php endif; ?>
