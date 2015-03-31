@@ -128,7 +128,7 @@
 
     function UISearch( el, options ) {
         this.el = el;
-        this.inputEl = el.querySelector( '.search-form > input.search-input' );
+        this.inputEl = el.querySelector( '#search-block-form input.form-text' );
         this._initEvents();
     }
 

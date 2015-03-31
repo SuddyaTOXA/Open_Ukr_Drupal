@@ -155,12 +155,6 @@ function open_preprocess_page(&$variables, $hook) {
     drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
         array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
   }
-//
-//  drupal_add_js('https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false',
-//      array('type' => 'external', 'scope' => 'footer', 'weight' => 5));
-//  drupal_add_js(drupal_get_path('theme','open') . '/js/mapJS.js',
-//      array('type' => 'file', 'scope' => 'footer', 'weight' => 6));
-//
 
     // Primary nav.
     $variables['primary_nav'] = FALSE;
@@ -181,6 +175,24 @@ function open_preprocess_page(&$variables, $hook) {
       $variables['theme_hook_suggestions'][] = 'page__403';
   }
 }
+
+/**
+* Customize search-form
+**/
+function open_form_alter(&$form, &$form_state, $form_id) {
+    if ($form_id == 'search_block_form') {
+        $form['search_block_form']['#title'] = t(''); // Меняем текст заголовка
+        $form['search_block_form']['#title_display'] = 'invisible'; // Выключаем отображение заголовка
+        $form['search_block_form']['#size'] = 20;  // Задаем размер поля ввода
+        $form['actions']['submit']['#value'] = t(''); // Меняем текст кнопки поиска
+        $form['search_block_form']['#class'] = 'search-input';  // CSS-class текстового поля
+
+        $searchtext = 'Search'; // Задаем текст внутри поля. Здесь я использую английское значение, его можно легко перевести в админке. Можно писать и по-русски. Помещаем его в переменную, чтобы было удобно с ним работать
+        // Альтернативный (HTML5) атрибут, вместо использования javascript
+        $form['search_block_form']['#attributes']['placeholder'] = t($searchtext);
+    }
+}
+
 
 /**
 * Theme wrapper function for the primary menu links
