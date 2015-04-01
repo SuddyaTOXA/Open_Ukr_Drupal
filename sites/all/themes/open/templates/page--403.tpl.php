@@ -19,11 +19,6 @@
                         $block = module_invoke('search', 'block_view', 'form');
                         print render($block['content']);
                     ?>
-<!--                        <form class="search-form" action="#" method="get">-->
-<!--                            <input type="search" class="search-input" name="s" placeholder="Search">-->
-<!--                            <input type="submit" class="search-submit" value="">-->
-<!--                            <i class="fa fa-search"></i>-->
-<!--                        </form>-->
                 </div>
 
                 <nav class="main-nav">

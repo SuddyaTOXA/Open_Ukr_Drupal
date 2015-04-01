@@ -19,11 +19,6 @@
                         $block = module_invoke('search', 'block_view', 'form');
                         print render($block['content']);
                     ?>
-<!--                        <form class="search-form" action="#" method="get">-->
-<!--                            <input type="search" class="search-input" name="s" placeholder="Search">-->
-<!--                            <input type="submit" class="search-submit" value="">-->
-<!--                            <i class="fa fa-search"></i>-->
-<!--                        </form>-->
                 </div>
 
                 <nav class="main-nav">
@@ -50,7 +45,7 @@
 
     <main class="main-content">
         <div class="wrap-error wrap-box">
-            <img src="<?php echo path_to_theme(); ?>/images/404_error.jpg" class="error-404-img" alt="error_404">
+            <img src="/<?php echo path_to_theme(); ?>/images/404_error.jpg" class="error-404-img" alt="error_404">
 
             <div class="error-text">
                 <p class="error-text-header">Did you try searching?</p>

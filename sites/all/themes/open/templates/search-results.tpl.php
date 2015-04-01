@@ -44,7 +44,6 @@
         <?php print $search_results; ?>
       </ul>
       <?php print $pager; ?>
-        <?php print theme('custom__pager'); ?>
     </div>
 <?php else : ?>
   <section class="wrap-page-title">
@@ -60,6 +59,6 @@
   <main class="main-content">
     <div class="wrap-no-results wrap-box">
       <p class="no-results-info">Sadly, nothing</p>
-      <img src="/<?php print drupal_get_path('theme','open'); ?>/images/search_error.jpg" class="no-results-img" alt="search_error">
+      <img src="/<?php echo path_to_theme(); ?>/images/search_error.jpg" class="no-results-img" alt="search_error">
     </div><!--end WRAP-NO-RESULTS-->
 <?php endif; ?>

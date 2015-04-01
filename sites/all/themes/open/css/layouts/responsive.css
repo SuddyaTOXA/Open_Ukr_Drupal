@@ -932,9 +932,9 @@ span.about-author {
 .pagination .pager-current,
 .pagination .pager-dots,
 .pager .pager-current,
-.pager .pager-dots,{
+.pager .pager-dots {
     display: inline-table;
-    padding: 5px 2px;
+    padding: 5px 2px !important;
 }
 .pager-previous,
 .pager-next {
