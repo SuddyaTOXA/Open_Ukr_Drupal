@@ -47,7 +47,7 @@
             </div>
         </header>
 
-    <?php if(!arg(0) == 'search'): ?>
+    <?php if((arg(0) == 'search') == FALSE): ?>
         <section class="wrap-page-title">
             <div class="wrap-box">
                 <?php if (arg(0) == 'node' && arg(1) == '30') { ?>
