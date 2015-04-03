@@ -13,7 +13,7 @@
             <div id="map">
                 <!-- add Google Map -->
                 <?php
-                    $block = module_invoke('block', 'block_view', '1');
+                    $block = module_invoke('views', 'block_view', 'footer_map-block');
                     print render($block['content']);
                 ?>
             </div>
