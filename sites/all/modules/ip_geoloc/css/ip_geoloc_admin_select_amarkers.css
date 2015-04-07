@@ -59,7 +59,3 @@ select.marker-color option[value="yellow"] {
   background: url(../amarkers/yellow.png) no-repeat 2px 1px;
   background-size: contain;
 }
-select.marker-color option[value="open"] {
-    background: url(../amarkers/open.png) no-repeat 2px 1px;
-    background-size: contain;
-}

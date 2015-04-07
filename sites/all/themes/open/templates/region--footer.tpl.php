@@ -31,6 +31,9 @@
                                 print render($block['content']);
                             ?>
                         </div>
+
+                        <p><?php $social = socialmedia_base_platforms();
+                            print(render($social['facebook']['templates']['profile-url'])); ?></p>
                     </div>
 
                     <!-- add feedback-form -->

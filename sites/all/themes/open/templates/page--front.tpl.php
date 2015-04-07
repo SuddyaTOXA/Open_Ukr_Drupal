@@ -19,7 +19,7 @@
                       <?php else: /* Use h1 when the content title is empty */ ?>
                         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
                             LOGO
-                        </a>  
+                        </a>
                       <?php endif; ?>
                     </h1>
 
@@ -70,6 +70,6 @@
                 print render($block['content']);
             ?>
         </main>
-</div><!--end WRAPPER-->
+    </div><!--end WRAPPER-->
 
   <?php print render($page['footer']); ?>

@@ -3,6 +3,10 @@
         <h3><?php print $title; ?></h3>
     </header>
 
+    <div>
+        <?php print render($content['field_video']); ?>
+    </div>
+
     <div class="video-container">
         <?php
             $url_video = strip_tags(render($content['field_video_link']));
@@ -14,5 +18,5 @@
         </div>
     </div>
 
-    <p><?php print strip_tags(render($content['body']));?></p>
+    <p><?php print strip_tags(render($content['body'])); ?></p>
 </article>

@@ -764,20 +764,27 @@ span.about-author {
     padding-top: 30px;
     text-align: center;
 }
-.single-content p {
+.single-content p,
+.single-content ul,
+.single-content ol,
+.single-content blockquote,
+.single-content img,
+.single-author {
+    display: block;
+    position: relative;
     max-width: 630px;
     width: 100%;
-    padding: 0 20px;
-    margin: 0 auto 17px;
-    line-height: 19px;
+    margin: 0 auto 17px !important;
+}
+.single-content p {
+    padding: 0 20px !important;
+    font: 400 16px 'Open Sans', Arial, sans-serif !important;
+    line-height: 19px !important;
     text-align: justify;
 }
 .single-content ul,
 .single-content ol {
-    max-width: 630px;
-    width: 100%;
-    padding: 0 20px 0 65px;
-    margin: 0 auto 17px;
+    padding: 0 20px 0 65px !important;
     text-align: left;
 }
 .single-content ul li {
@@ -787,20 +794,12 @@ span.about-author {
     list-style-type: decimal;
 }
 .single-content a {
+    font: 400 16px 'Open Sans', Arial, sans-serif !important;
     color: #225A7E;
 }
-.single-content img {
-    display: block;
-    max-width: 630px;
-    width: 100%;
-    margin: 0 auto 17px;
-}
 .single-content blockquote {
-    position: relative;
-    max-width: 630px;
-    width: 100%;
-    margin: 0 auto 26px;
-    padding: 28px 0 38px;
+    margin-bottom: 26px !important;
+    padding: 28px 0 38px !important;
     background: #225C7B;
 
     -webkit-box-shadow: -285px 0 0 0 #225C7B, 285px 0 0 0 #225C7B;
@@ -827,18 +826,15 @@ span.about-author {
     background-position: 0 0;
 }
 .single-content blockquote p {
-    padding: 0;
-    margin: 0;
-    font-size: 22px;
-    font-style: italic;
-    line-height: 26px;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 22px !important;
+    font-style: italic !important;
+    line-height: 26px !important;
     color: #FFFFFF;
     text-align: center;
 }
 .single-author {
-    position: relative;
-    max-width: 630px;
-    width: 100%;
     margin: -7px auto 0;
     padding-bottom: 13px;
 }
