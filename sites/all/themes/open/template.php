@@ -139,6 +139,13 @@ function open_preprocess_page(&$variables, $hook) {
   drupal_add_js(drupal_get_path('theme','open') . '/js/uisearch.js',
       array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
 
+    drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
+    drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
+
+    drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
+        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+
+
   if (drupal_is_front_page()) {
     drupal_add_css(drupal_get_path('theme','open') . '/css/responsiveslides.css');
 
@@ -148,13 +155,13 @@ function open_preprocess_page(&$variables, $hook) {
         array('type' => 'file', 'scope' => 'footer', 'weight' => 4));
   }
 
-  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'how') {
-    drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
-    drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
-
-    drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
-        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
-  }
+//  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'how') {
+//    drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
+//    drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
+//
+//    drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
+//        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+//  }
 
     // Primary nav.
     $variables['primary_nav'] = FALSE;
