@@ -14,6 +14,8 @@
 
 <?php else: ?>
 
+
+
     <div class="single-content">
         <?php print render($content['body']); ?>
     </div>
