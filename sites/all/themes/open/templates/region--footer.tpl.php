@@ -24,16 +24,41 @@
                         <p class="copyright">Copyrights enim ad minim veniam, quis nostrud exerci tation ullamcorper
                             suscipit lobortis nisl ut aliquip iusto odio dignissim qui blandit praesent lupt.</p>
 
-                        <div class="list-social">
-                            <!-- add social links -->
-                            <?php
-                                $block = module_invoke('widgets', 'block_view', 's_socialmedia_profile-default');
-                                print render($block['content']);
-                            ?>
-                        </div>
 
-<!--                        <p>--><?php //$social = socialmedia_base_platforms();
-//                            print_r($social); ?><!--</p>-->
+                        <?php $fb = token_replace('[socialmedia:sm-facebook_url]');
+                              $tw = token_replace('[socialmedia:sm-twitter_url]');
+                              $yt = token_replace('[socialmedia:sm-youtube_url]');
+
+                            if ( $fb || $tw || $yt ) { ?>
+                        <ul class="list-social">
+                            <?php if($fb): ?>
+                            <li>
+                                <a href="<?php print $fb; ?>" target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <?php endif; ?>
+
+                            <?php if($tw): ?>
+                            <li>
+                                <a href="<?php print $tw; ?>" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                    Twitter
+                                </a>
+                            </li>
+                            <?php endif; ?>
+
+                            <?php if($yt): ?>
+                            <li>
+                                <a href="<?php print $yt; ?>" target="_blank">
+                                    <i class="fa fa-youtube-play"></i>
+                                    YouTube
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                        <?php } ?>
                     </div>
 
                     <!-- add feedback-form -->
