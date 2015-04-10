@@ -66,14 +66,14 @@
                         <h1><?php print $title; ?></h1>
                     </header>
 
-                    <?php $descrip = $node->field_description['und']['0']['value'];
-                    if ($descrip !== FALSE): ?>
-                        <p><?php print strip_tags($node->field_description['und']['0']['value']); ?></p>
+                    <?php $descrip = ($content['field_description']);
+                    if ($descrip): ?>
+                        <p><?php print strip_tags(render($content['field_description'])); ?></p>
                     <?php endif; ?>
 
-                    <?php $art_descrip = $node->field_article_description['und']['0']['value'];
-                    if ($art_descrip !== FALSE): ?>
-                        <p><?php print strip_tags($node->field_article_description['und']['0']['value']); ?></p>
+                    <?php $art_descrip = ($content['field_article_description']);
+                    if ($art_descrip): ?>
+                        <p><?php print strip_tags(render($content['field_article_description'])); ?></p>
                     <?php endif; ?>
 
                 <?php } ?>
