@@ -151,8 +151,6 @@ function open_preprocess_page(&$variables, $hook) {
 
     drupal_add_js(drupal_get_path('theme','open') . '/js/responsiveslides.min.js',
         array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
-    drupal_add_js(drupal_get_path('theme','open') . '/js/yt.preview.js',
-        array('type' => 'file', 'scope' => 'footer', 'weight' => 4));
   }
 
 //  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'how') {
