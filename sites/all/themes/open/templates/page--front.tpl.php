@@ -70,6 +70,15 @@
                 print render($block['content']);
             ?>
         </main>
+
+        <?php if ($confirmation = true ) : ?>
+            <div id="popupWrapper">
+                <div id="popupMessage">
+                    <div class="closeForm"></div>
+                    <p>Your letter sent!</p>
+                </div>
+            </div>
+        <?php endif; ?>
     </div><!--end WRAPPER-->
 
   <?php print render($page['footer']); ?>

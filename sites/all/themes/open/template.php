@@ -138,6 +138,8 @@ function open_preprocess_page(&$variables, $hook) {
       array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
   drupal_add_js(drupal_get_path('theme','open') . '/js/uisearch.js',
       array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
+drupal_add_js(drupal_get_path('theme','open') . '/js/popup.js');
+
 
     drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
     drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
@@ -179,6 +181,12 @@ function open_preprocess_page(&$variables, $hook) {
   if($status == "403 Forbidden") {
       $variables['theme_hook_suggestions'][] = 'page__403';
   }
+
+  // Custom confirm form
+    $$variables['confirmation'] = FALSE;
+    if (isset($_GET['confirmation']) && ($_GET['confirmation'] == 'yes')) {
+        $$variables['confirmation'] = TRUE;
+    }
 }
 
 /**
