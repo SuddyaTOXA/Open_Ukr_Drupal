@@ -53,6 +53,15 @@
             </div>
         </div><!--end WRAP-ERROR-->
     </main>
+
+    <?php if ($confirmation) : ?>
+        <div id="popupWrapper">
+            <div id="popupMessage">
+                <div class="closeForm">&times;</div>
+                <?php print $confirmation_msg; ?>
+            </div>
+        </div>
+    <?php endif; ?>
 </div><!--end WRAPPER-->
 
 <?php print render($page['footer']); ?>

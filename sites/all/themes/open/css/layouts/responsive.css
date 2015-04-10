@@ -422,12 +422,15 @@ main {
     font: 400 30px 'Montserrat', 'Open Sans', sans-serif;
 }
 .start-video {
-    position: relative;
     display: inline-block;
     margin-bottom: 15px;
+}
+.colorbox-load {
+    position: relative;
+    display: block;
     cursor: pointer;
 }
-.start-video:after {
+.colorbox-load:after {
     content: "\f04b";
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 36px;
@@ -457,7 +460,7 @@ main {
     -moz-transition-duration: 0.25s;
     transition-duration: 0.25s;
 }
-.start-video:hover:after {
+.colorbox-load:hover:after {
     background: #ffffff;
     background-color: rgba(251,241,215,.75);
 }
@@ -1220,7 +1223,7 @@ span.about-author {
 #popupWrapper {
     position: absolute;
     z-index: 9999;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.4);
     top: 0;
     left: 0;
     width: 100%;
@@ -1233,31 +1236,48 @@ span.about-author {
     position: absolute;
     z-index: 9999;
     background-color: #FFFFFF;
-    border: 3px solid rgba(29, 86, 118, 1);
+    border: 3px solid #1D5676;
     padding: 30px;
     left: 50%;
     top: 500px;
-    width: 450px;
-    margin-left: -200px;
+    width: 350px;
+    margin-left: -208px;
     margin-top: -170px;
     color: #000;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+    text-align: center;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
 }
 
 .closeForm {
-    background: url('../../images/close_form.png') 50% 50% no-repeat;
-    width: 48px;
-    height: 48px;
+    width: 26px;
+    height: 26px;
     position: absolute;
-    right: -5px;
-    top: -5px;
+    right: 0;
+    top: 0;
     z-index: 9999;
     cursor: pointer;
+    color: #1D5676;
+    font-size: 32px;
+    line-height: 26px;
+
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+
+    -webkit-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    transition-duration: 0.15s;
 }
-
-
+.closeForm:hover {
+    color: #3B7494;
+}
+.closeForm:active {
+    color: #4D86A6;
+}
 
 /*----------------------------------------------------------------------------------*/
 /*-----------------------------------RESPONSIVE-------------------------------------*/

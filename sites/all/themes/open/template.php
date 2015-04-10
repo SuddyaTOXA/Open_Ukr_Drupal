@@ -132,36 +132,30 @@ function open_preprocess_block(&$variables, $hook) {
 // */
 
 function open_preprocess_page(&$variables, $hook) {
-  drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+    drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
       array('type' => 'external', 'scope' => 'footer', 'weight' => 1));
-  drupal_add_js(drupal_get_path('theme','open') . '/js/jquery.placeholder.js',
+    drupal_add_js(drupal_get_path('theme','open') . '/js/jquery.placeholder.js',
       array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
-  drupal_add_js(drupal_get_path('theme','open') . '/js/uisearch.js',
+    drupal_add_js(drupal_get_path('theme','open') . '/js/uisearch.js',
       array('type' => 'file', 'scope' => 'footer', 'weight' => 2));
-drupal_add_js(drupal_get_path('theme','open') . '/js/popup.js');
+    drupal_add_js(drupal_get_path('theme','open') . '/js/popup.js');
 
 
-    drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
-    drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
+    if (drupal_is_front_page()) {
+        drupal_add_css(drupal_get_path('theme','open') . '/css/responsiveslides.css');
 
-    drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
-        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+        drupal_add_js(drupal_get_path('theme','open') . '/js/responsiveslides.min.js',
+            array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+    }
 
+    if (!drupal_is_front_page()) {
+        drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
+        drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
 
-  if (drupal_is_front_page()) {
-    drupal_add_css(drupal_get_path('theme','open') . '/css/responsiveslides.css');
+        drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
+            array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
+    }
 
-    drupal_add_js(drupal_get_path('theme','open') . '/js/responsiveslides.min.js',
-        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
-  }
-
-//  if (arg(0) == 'culture' || arg(0) == 'religion' || arg(0) == 'how') {
-//    drupal_add_css(drupal_get_path('theme','open') . '/css/slick.css');
-//    drupal_add_css(drupal_get_path('theme','open') . '/css/slick-theme.css');
-//
-//    drupal_add_js(drupal_get_path('theme','open') . '/js/slick.min.js',
-//        array('type' => 'file', 'scope' => 'footer', 'weight' => 3));
-//  }
 
     // Primary nav.
     $variables['primary_nav'] = FALSE;
@@ -183,9 +177,10 @@ drupal_add_js(drupal_get_path('theme','open') . '/js/popup.js');
   }
 
   // Custom confirm form
-    $$variables['confirmation'] = FALSE;
+    $variables['confirmation'] = FALSE;
     if (isset($_GET['confirmation']) && ($_GET['confirmation'] == 'yes')) {
-        $$variables['confirmation'] = TRUE;
+        $variables['confirmation'] = TRUE;
+        $variables['confirmation_msg'] = '<p>Your letter sent. Thank you!</p>';
     }
 }
 

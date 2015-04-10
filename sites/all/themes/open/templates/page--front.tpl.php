@@ -58,7 +58,7 @@
                 </header>
 
                 <?php $descrip = $node->field_description['und']['0']['value'];
-                if ($descrip !== FALSE): ?>
+                    if ($descrip !== FALSE): ?>
                     <p class="description"><?php print strip_tags($node->field_description['und']['0']['value']); ?></p>
                 <?php endif; ?>
 
@@ -71,14 +71,15 @@
             ?>
         </main>
 
-        <?php if ($confirmation = true ) : ?>
+        <?php if ($confirmation) : ?>
             <div id="popupWrapper">
                 <div id="popupMessage">
-                    <div class="closeForm"></div>
-                    <p>Your letter sent!</p>
+                    <div class="closeForm">&times;</div>
+                    <?php print $confirmation_msg; ?>
                 </div>
             </div>
         <?php endif; ?>
+
     </div><!--end WRAPPER-->
 
   <?php print render($page['footer']); ?>
