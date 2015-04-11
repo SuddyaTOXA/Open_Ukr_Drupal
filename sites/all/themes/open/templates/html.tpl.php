@@ -21,7 +21,7 @@
 <!--    <meta name="MobileOptimized" content="width">-->
 <!--    <meta name="HandheldFriendly" content="true">-->
     <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=1024, user-scalable=yes">
+    <meta name="viewport" content="width=1200, user-scalable=yes">
   <?php endif; ?>
   <meta http-equiv="cleartype" content="on">
 
