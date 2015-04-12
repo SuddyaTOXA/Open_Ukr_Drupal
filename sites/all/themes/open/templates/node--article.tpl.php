@@ -14,12 +14,23 @@
 
 <?php else: ?>
 
+    <section class="wrap-page-title">
+        <div class="wrap-box">
+            <header>
+                <h1><?php print $title; ?></h1>
+            </header>
 
-    <div class="single-content">
-        <?php print render($content['body']); ?>
-    </div>
-    <div class="single-author">
-        <span><?php print strip_tags(render($name)); ?></span>
-    </div>
+            <?php print render($content['field_article_description']); ?>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="single-content">
+            <?php print render($content['body']); ?>
+        </div>
+        <div class="single-author">
+            <span><?php print strip_tags(render($name)); ?></span>
+        </div>
+    </main>
 
 <?php endif; ?>

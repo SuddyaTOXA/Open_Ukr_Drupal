@@ -42,48 +42,7 @@
             </div>
         </header>
 
-    <?php if((arg(0) == 'search') == FALSE): ?>
-        <section class="wrap-page-title">
-            <div class="wrap-box">
-                <?php if (arg(0) == 'node' && arg(1) == '30') { ?>
-                    <header>
-                        <h1>There’s nothing here</h1>
-                    </header>
-
-                    <p>We so sorry</p>
-                <?php }
-
-                elseif (arg(0) == 'node' && arg(1) == '31') { ?>
-                    <header>
-                        <h1>Error 403</h1>
-                    </header>
-
-                    <p>Access Denied/Forbidden</p>
-
-                <?php } else { ?>
-
-                    <header>
-                        <h1><?php print $title; ?></h1>
-                    </header>
-
-                    <?php $descrip = ($content['field_description']);
-                    if ($descrip): ?>
-                        <p><?php print strip_tags(render($content['field_description'])); ?></p>
-                    <?php endif; ?>
-
-                    <?php $art_descrip = ($content['field_article_description']);
-                    if ($art_descrip): ?>
-                        <p><?php print strip_tags(render($content['field_article_description'])); ?></p>
-                    <?php endif; ?>
-
-                <?php } ?>
-            </div>
-        </section>
-
-        <main class="main-content">
-    <?php endif; ?>
-            <?php print render($page['content']); ?>
-        </main>
+        <?php print render($page['content']); ?>
 
         <?php if ($confirmation) : ?>
             <div id="popupWrapper">

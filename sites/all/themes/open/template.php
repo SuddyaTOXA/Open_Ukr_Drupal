@@ -132,6 +132,11 @@ function open_preprocess_block(&$variables, $hook) {
 // */
 
 function open_preprocess_page(&$variables, $hook) {
+    drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700',
+        array('type' => 'external'));
+    drupal_add_css('http://fonts.googleapis.com/css?family=Montserrat:700,400',
+        array('type' => 'external'));
+
     drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
       array('type' => 'external', 'scope' => 'footer', 'weight' => 1));
     drupal_add_js(drupal_get_path('theme','open') . '/js/jquery.placeholder.js',
