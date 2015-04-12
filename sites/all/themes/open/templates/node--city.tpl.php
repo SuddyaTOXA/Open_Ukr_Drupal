@@ -18,11 +18,22 @@
             </div>
 <?php else: ?>
 
-            <div class="single-content">
+    <section class="wrap-page-title">
+        <div class="wrap-box">
+            <header>
+                <h1><?php print $title; ?></h1>
+            </header>
+
+            <?php print render($content['field_city_description']); ?>
+        </div>
+    </section>
+
+
+    <div class="single-content">
                 <?php print render($content['body']); ?>       
             </div>
             <div class="single-author">
-                <span><?php print strip_tags(render($name)); ?></span>
+                <span><?php print strip_tags(render($content['field_city_author'])); ?></span>
             </div>
 
 <?php endif; ?>

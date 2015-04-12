@@ -29,7 +29,7 @@
             <?php print render($content['body']); ?>
         </div>
         <div class="single-author">
-            <span><?php print strip_tags(render($name)); ?></span>
+            <span><?php print strip_tags(render($content['field_article_author‎'])); ?></span>
         </div>
     </main>
 
